@@ -1,0 +1,11 @@
+//console.log('<%= @new_url.errors %>')
+
+<% if @new_url.errors %>
+  console.log("error")
+  $("#error_url").html("<br><div style='color:red;'>La url que ingresaste no es valida</div><br>");
+  console.log("error")
+<% else %>
+  $("#error_url").html("<br><div style='color:red;'>lala/div><br>");
+<% end %>
+
+// https://www.alfajango.com/blog/rails-js-erb-remote-response-not-executing/

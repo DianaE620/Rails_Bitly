@@ -1,0 +1,27 @@
+
+<div class="form-container">
+
+<%= form_for @user do |f| %>
+
+  Nombre:
+  <%= f.text_field :name, placeholder: "Ingresa tu nombre" %><br><br>
+
+   Correo:
+  <%= f.text_field :email, placeholder: "Ingresa tu correo" %><br><br>
+
+   Contraseña:
+  <%= f.password_field :password, placeholder: "Ingresa tu contraseña" %><br><br>
+
+  <%= f.submit "Crear cuenta" %>
+<% end %>
+  
+  <% if @errors %>
+    <% @errors.each do |attribute, message| %>
+      <br>
+      <div class="error"><%= message.join %></div>
+    <% end %>
+  <% end %>
+
+</div>
+<br>
+<%= link_to 'Index', root_path %> 

@@ -1,0 +1,9 @@
+
+
+<%= form_for @url, remote: :true do |f| %>
+  <%= f.text_field :long_url, placeholder: "Ingresa long url" ,:class => "long_input"  %>
+
+  <%= f.submit "Crear Short Url" %>
+<% end %>
+
+<div id="error_url"></div>

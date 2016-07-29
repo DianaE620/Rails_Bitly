@@ -1,0 +1,22 @@
+<br>
+<div>Ingresa tu Usuario para iniciar sesión:</div>
+<br>
+<div class="form-container">
+
+
+  <%= form_for @user, html: { autocomplete: "off" }, url: {action: "authenticate"} , method: :post do |f| %>
+    Ingresa tu correo:<br><br>
+    <%= f.text_field :email %><br><br>
+    Ingresa tu password:<br><br>
+    <%= f.password_field :password %><br><br>
+    <%= f.submit "Ingresar" %>
+  <% end %>
+
+<br>
+  <% if @error %>
+    <div class="error"><%= @error %></div>
+  <% end %>
+
+</div>
+
+<%= link_to 'Index', root_path %> 

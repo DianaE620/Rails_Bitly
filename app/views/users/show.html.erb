@@ -1,0 +1,28 @@
+
+<h2>Bienvenido a tu Perfil: <%= @user.name %></h2>
+
+<br>
+<%= link_to 'Crear nueva short url', new_url_path, remote: :true, id: 'new_link' %>
+<br><br>
+
+<div>Ultimas Urls Creadas: </div> 
+
+<div id="urls-contenedor">
+  <% @urls_user.each do |u|%>
+    <p><%= u.long_url %>
+      <br>
+      <% @url = u %>
+      <span><%= link_to "#{ini_uri + u.short_url}", visitlong_path(u.id), 'data-turbolinks' => false %>
+
+      </span> &nbsp&nbsp&nbsp&nbsp
+      <span>Visitas: <%= u.visits %></span>
+    </p>
+  <% end %>
+</div>
+
+<br>
+<%= link_to 'Cambiar mis datos', edit_user_path(@user) %>
+<br><br>
+<%= link_to 'Index', root_path %>
+<br><br>
+<%= link_to 'Cerrar sesión', logout_path %> 
